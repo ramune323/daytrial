@@ -1,0 +1,83 @@
+@import "config";
+
+/* access
+--------------------- */
+.access-inner {
+  padding-bottom: 120px;
+  @include inner(800px);
+
+  @include mq(tab) {
+    @include inner(90%);
+  }
+
+  @include mq() {
+    @include inner(90%);
+  }
+}
+
+.access-title {
+  @include title;
+}
+
+.access-map-area {
+  text-align: center;
+  margin-top: 108px;
+}
+
+.access-iframe-wrap {
+  position: relative;
+
+  @include mq(tab) {
+    width: 100%;
+    padding-top: 50%;
+  }
+
+  @include mq() {
+    width: 100%;
+    padding-top: 50%;
+  }
+
+  iframe {
+    @include mq(tab) {
+      @include res_iframe;
+    }
+
+    @include mq() {
+      @include res_iframe;
+    }
+  }
+}
+
+.access-info {
+  display: flex;
+
+  dt {
+    float: left;
+    clear: left;
+    width: 104px;
+    margin-top: 13px;
+    font-weight: bold;
+  }
+
+  dd {
+    float: left;
+    margin-top: 14px;
+  }
+}
+
+.access-btn {
+  text-align: center;
+  margin-top: 30px;
+
+  a {
+    background: url(/img/button-arrow.png) no-repeat center right 12px / 17px 16px;
+    @include big-btn;
+    padding: 20px 77px;
+    position: relative;
+    display: inline-block;
+
+    @include mq() {
+      padding: 20px 50px;
+    }
+  }
+}

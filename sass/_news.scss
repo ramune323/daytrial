@@ -1,0 +1,102 @@
+@import "config";
+
+/* news
+--------------------- */
+.news-inner {
+  @include inner(800px);
+
+  @include mq(tab) {
+    @include inner(80%);
+  }
+
+  @include mq() {
+    @include inner(90%);
+  }
+}
+
+.news-main-title {
+  @include title;
+}
+
+.news-area {
+  padding-top: 113px;
+}
+
+.news-row {
+  display: flex;
+  padding-bottom: 17px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid $table-line-color;
+
+  &:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  @include mq() {
+    display: block;
+  }
+}
+
+.news-date {
+  display: inline-block;
+  font-family: $font-family-english;
+}
+
+.news-meta {
+  width: 190px;
+}
+
+
+.label1 {
+  @include small-btn($button-footer);
+  margin-left: 15px;
+}
+
+.label2 {
+  @include small-btn($main-blue);
+    margin-left: 15px;
+}
+
+.label3 {
+  @include small-btn($main-red);
+  margin-left: 15px;
+}
+
+.news-title {
+  width: calc(100% - 190px);
+  padding-left: 20px;
+
+  a {
+    color: $main-font-color;
+    line-height: 1.25;
+  }
+
+  @include mq() {
+    padding-left: 0;
+    padding-top: 20px;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.news-more {
+  text-align: center;
+  padding: 64px 0 120px;
+
+  a {
+    color: $main-red;
+    font-weight: bold;
+    font-family: $font-family-english;
+    position: relative;
+
+    img {
+      position: absolute;
+      margin-left: 10px;
+      width: 4px;
+      height: 8px;
+      top: 40%;
+    }
+  }
+}

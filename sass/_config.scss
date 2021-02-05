@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+/* ====================================================================
+ setting
+===================================================================== */
+
+/* color
+------------------------------------------------------ */
+$base-white: #FFF; // ベース背景（白）
+$main-blue: #3F51B5; // メイン青
+$shadow-in-blue: #00000029; // シャドウ
+$main-red: #E81919; // メイン赤
+$main-font-color: #333; // メイン文字色
+$base-gray: #EFEFEF; // ベース背景（灰）
+$map-color: #DDD; // マップ背景
+$card-font-color: #6F7579; // カード文字色
+$table-line-color: #707070; // 表ライン
+$button-footer: #666; // ボタン・フッター
+$table-subLine-color: #999; // 表サブライン
+$placeholder-color: #CCC; // フォームのplaceholder
+$gradation-gray: #666; // フッターグラデーション（灰）
+$drawer-overlay: #000000CC; // ドロワー背景
+$modal-bg: #0000004D; // モーダル背景
+
+
+/* font-family
+------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP&display=swap');
+
+$font-family: 'Lato', 'Noto Sans JP', sans-serif;
+$font-family-english: 'Lato', sans-serif; // 英数字部分のフォント
+$font-family-japanese: 'Noto Sans JP', sans-serif; // 日本語部分のフォント
+
+
+
+/* ====================================================================
+ base
+===================================================================== */
+
+body {
+  font-family: $font-family-japanese;
+  color: $main-font-color;
+  background-color: $base-white;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+.clear::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+
+
+/* ====================================================================
+ mixin
+===================================================================== */
+
+/* responsive
+------------------------------------------------------ */
+$breakpoints: (
+  'sp': 'screen and (max-width: 767px)',
+  'sp-min': 'screen and (min-width: 768px)',
+  'tab': 'screen and (max-width: 1024px)',
+  'pc': 'screen and (min-width: 1025px)',
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin res_iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* common
+------------------------------------------------------ */
+@mixin big-btn {
+  display: inline-block;
+  background-color: $main-blue;
+  box-shadow: 0 3px 6px $shadow-in-blue;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  color: $base-white;
+  font-family: $font-family-japanese;
+  font-weight: bold;
+}
+
+@mixin small-btn($btn-color) {
+  color: $base-white;
+  background-color: $btn-color;
+  padding: 8px 11px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+@mixin inner($width-size: 93.75%) {
+  width: $width-size;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin lhCrop($line-height, $capital-letter) {
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((#{$capital-letter} - #{$line-height}) * 0.5em);
+  }
+}
+
+@mixin title($font-size: 48px, $bottom: -28px, $width: 60px, $height: 4px) {
+  font-family: $font-family-english;
+  position: relative;
+  font-size: $font-size;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 100px;
+
+  @include mq() {
+    font-size: 30px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: $bottom;
+    display: block;
+    width: $width;
+    height: $height;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $main-blue;
+
+    @include mq() {
+      width: 30px;
+    }
+  }
+}
+
+@mixin modal-sub-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 16px;
+  border-left: solid 4px $main-blue;
+
+  @include mq() {
+    font-size: 18px;
+  }
+}

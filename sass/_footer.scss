@@ -1,0 +1,163 @@
+@import "config";
+
+/* footer
+--------------------- */
+.footer {
+  color: $base-white;
+  background: linear-gradient(to top, $main-font-color, $gradation-gray);
+}
+
+.footer-inner {
+  padding: 60px 40px 24px;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: space-between;
+
+  @include mq() {
+    display: block;
+    text-align: center;
+  }
+}
+
+.footer-left {
+  width: 30%;
+
+  @include mq() {
+    width: 100%;
+  }
+}
+
+.footer-left-img {
+  margin-bottom: 32px;
+  width: 205px;
+  height: 40px;
+
+  @include mq() {
+    margin: 0 auto 32px;
+
+    img {
+      display: block;
+    }
+  }
+}
+
+.footer-left-item {
+  font-size: 14px;
+  margin-bottom: 14px;
+
+  @include mq() {
+    font-size: 12px;
+  }
+}
+
+.footer-center {
+  width: 50%;
+  padding-left: 48px;
+
+  @include mq(tab) {
+    padding: 0 20px;
+  }
+
+  @include mq() {
+    width: 100%;
+    font-size: 14px;
+    margin-top: 40px;
+  }
+}
+
+.footer-center-list {
+  display: flex;
+
+  @include mq(tab) {
+    justify-content: space-around;
+  }
+
+  @include mq() {
+    justify-content: center;
+  }
+}
+
+.footer-center-item {
+  font-family: $font-family-english;
+  margin-left: 40px;
+
+  &:nth-child(1) {
+    margin-left: 0;
+  }
+
+  @include mq(tab) {
+    margin-left: 0;
+  }
+
+  @include mq() {
+    margin-left: 20px;
+
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+  }
+}
+
+.footer-right {
+  width: 20%;
+
+  @include mq() {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+}
+
+.footer-right-list {
+  display: flex;
+  justify-content: flex-end;
+
+  @include mq() {
+    justify-content: center;
+  }
+}
+
+.footer-right-img {
+  margin-left: 16px;
+}
+
+
+/* copyright
+--------------------- */
+.copyright-area {
+  margin-top: 32px;
+  font-size: 14px;
+  text-align: center;
+
+  p {
+    font-family: $font-family-english;
+  }
+
+  @include mq() {
+    font-size: 12px;
+  }
+}
+
+
+/* to top
+--------------------- */
+.to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 4;
+  display: none;
+
+  @include mq() {
+    right: 0;
+    bottom: 10px;
+  }
+
+  img {
+    @include mq() {
+      width: 80%;
+    }
+  }
+}

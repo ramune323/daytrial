@@ -1,0 +1,407 @@
+@import "config";
+
+/* contact
+--------------------- */
+.contact {
+  padding-bottom: 120px;
+}
+
+.contact-inner {
+  @include inner(800px);
+
+  @include mq(tab) {
+    @include inner(90%);
+  }
+
+  @include mq() {
+    @include inner(90%);
+  }
+}
+
+.contact-title {
+  @include title;
+}
+
+.contact-form-area {
+  background-color: $base-gray;
+  margin-top: 108px;
+  padding: 60px 60px;
+  position: relative;
+
+  @include mq(tab) {
+    padding: 80px 80px;
+  }
+
+  @include mq() {
+    padding: 30px 10px;
+  }
+}
+
+/* contact_form
+--------------------- */
+.contact-form {
+
+  &:nth-of-type(3) {
+    padding-bottom: 19px;
+
+    @include mq() {
+      padding-top: 3px;
+      padding-bottom: 0;
+    }
+  }
+
+  @include mq() {
+    padding: 0 10px 0;
+  }
+}
+
+.contact-form-wrap {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  margin-bottom: 41px;
+
+  @include mq() {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-top: 12px;
+
+    @include mq() {
+      display: inline;
+    }
+  }
+}
+
+.wrap-left {
+  @include mq(tab) {
+    width: 180px;
+  }
+
+  @include mq() {
+    width: 100%;
+  }
+}
+
+.wrap-right {
+  @include mq(tab) {
+    width: calc(100% - 180px);
+  }
+
+  @include mq() {
+    width: 100%;
+  }
+}
+
+.text {
+  width: 520px;
+  border-color: $table-line-color;
+  background-color: $base-white;
+
+  @include mq(tab) {
+    width: 100%;
+  }
+
+  @include mq() {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    color: $placeholder-color;
+  }
+}
+
+.select {
+  width: 520px;
+  height: 38px;
+  border-color: $table-line-color;
+  background: $base-white url(../../img/select-arrow.png) no-repeat center right 12px / 17px 14px;
+
+  @include mq(tab) {
+    width: 100%;
+  }
+
+  @include mq() {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+.textarea-text {
+  width: 520px;
+  height: 240px;
+  border-color: $table-line-color;
+  background-color: $base-white;
+
+  @include mq(tab) {
+    width: 100%;
+  }
+
+  @include mq() {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    color: $placeholder-color;
+  }
+}
+
+.contact-form-contents-wrap {
+  display: flex;
+  justify-content: space-between;
+
+  @include mq() {
+    display: block;
+    margin-top: 23px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-top: 11px;
+  }
+}
+
+.contact-radio-form {
+  margin-top: 31px;
+
+  @include mq() {
+    margin-top: 23px;
+    margin-left: 10px;
+  }
+
+  label {
+    margin-right: 23px;
+  }
+}
+
+.radio + span {
+  padding-left: 28px;
+
+  @include mq() {
+    display: block;
+  }
+}
+
+.radio + span::before {
+  border: 1px solid $table-line-color;
+  height: 18px;
+  width: 18px;
+}
+
+.radio + span::after {
+  background: $main-blue;
+  padding: 0;
+  left: 5px;
+}
+
+.contact-policy-form {
+  text-align: center;
+  margin-top: 67px;
+
+  @include mq() {
+    margin-top: 40px;
+  }
+
+  a {
+    font-weight: bold;
+    color: $main-font-color;
+    text-decoration: underline;
+  }
+}
+
+.check + span {
+  padding-left: 49px;
+
+  @include mq() {
+    padding-left: 35px;
+  }
+}
+
+.check + span::before {
+  border: 1px solid $table-line-color;
+  border-radius: 0;
+  height: 25px;
+  width: 25px;
+}
+
+.check + span::after {
+  height: 26px;
+  width: 26px;
+  border-bottom: 0;
+  border-left: 0;
+  background: transparent url(../../img/checkbox.png) no-repeat center center / cover;
+  transform: translateY(-40%) rotate(0);
+}
+
+.contact-btn-form {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.submit-btn {
+  @include big-btn;
+  padding:15px 120px;
+  margin-bottom: 0;
+  background: $main-blue url(../../img/button-arrow.png) no-repeat center right 12px / 17px 16px;
+  transition: all 0.3s ease 0s;
+
+  @include mq() {
+    padding: 20px 93px;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.contact-form-required {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  color: $base-white;
+  background-color: $main-red;
+  padding: 4px 8px;
+  margin-top: 8px;
+  border-radius: 4px;
+
+  @include mq() {
+    margin-top: 0;
+  }
+}
+
+
+/* privacy-policy
+--------------------- */
+.modal {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.modal-bg {
+  background-color: $modal-bg;
+  opacity: 1;
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+
+.modal-contents {
+  background-color: $base-white;
+  color: $table-line-color;
+  left: 50%;
+  padding: 60px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 652px;
+  z-index: 90;
+
+  @include mq(tab) {
+    width: 80%;
+  }
+
+  @include mq() {
+    width: 90%;
+    height: 70%;
+    padding: 30px;
+  }
+}
+
+.modal-close-icon {
+  width: 40px;
+  height: 40px;
+  background: transparent url(../../img/btn-batsu.png) no-repeat center center / contain;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  z-index: 100;
+}
+
+.modal-title {
+  @include title(24px, -24px, 100px, 2px);
+  margin-bottom: 64px;
+  padding-top: 0;
+
+  @include mq() {
+    font-size: 20px;
+    margin-bottom: 50px;
+
+    &::before {
+      bottom: -20px;
+    }
+  }
+}
+
+.modal-scroll-area {
+  height: 350px;
+  overflow-y: scroll;
+}
+
+.modal-sub-contents {
+  margin: 0 60px 40px;
+
+  @include mq(tab) {
+    margin: 0 20px 40px;
+  }
+
+  @include mq() {
+    margin: 0 10px 30px 10px;
+  }
+}
+
+.modal-subtitle {
+  @include modal-sub-title;
+}
+
+.modal-content {
+  padding: 16px 0 0 19.5px;
+  line-height: 1.5;
+  @include lhCrop(1.5, 1);
+
+  @include mq() {
+    padding: 16px 0 0 0;
+    font-size: 14px;
+  }
+}
+
+.modal-close-btn {
+  text-align: center;
+  margin-top: 46px;
+
+  a {
+    @include big-btn;
+    padding: 16px 64px;
+  }
+}
+
+// モーダルを開いている時、背景を固定するためのスタイル
+.fixed {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.contact-message {
+  text-align: center;
+  margin-top: 60px;
+  display: none;
+
+  &.-error {
+    color: #f00;
+  }
+}

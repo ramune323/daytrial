@@ -1,0 +1,134 @@
+@import "config";
+
+$table-common: solid 1px $table-line-color;
+
+/* price
+--------------------- */
+.price {
+  background-color: $base-gray;
+}
+
+.price-inner {
+  @include inner();
+
+  // タブレット
+  @include mq(tab) {
+    @include inner(90%);
+  }
+
+  // スマホ
+  @include mq() {
+    // padding: 0 20px;
+    @include inner(90%);
+  }
+}
+
+.price-title {
+  @include title;
+}
+
+.price-area {
+  margin-top: 108px;
+  display: flex;
+  padding-bottom: 120px;
+  // width: 100%;
+
+  @include mq() {
+    display: block;
+  }
+}
+
+.price-img-area {
+  margin-right: 40px;
+
+  @include mq() {
+    margin-right: 0;
+  }
+
+  img {
+    @include mq(pc) {
+      width: 454px;
+    }
+
+    width: 100%;
+  }
+}
+
+.price-table-area {
+  width: 100%;
+
+  @include mq(tab) {
+    width: 70%;
+  }
+
+  @include mq() {
+    width: 100%;
+  }
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  @include mq(sp) {
+    margin-top: 50px;
+  }
+
+  tr {
+    height: 57px;
+  }
+
+  th {
+    font-family: $font-family-english;
+    border: $table-common;
+    background-color: $table-subLine-color;
+    color: $base-white;
+    text-align: center;
+    font-weight: bold;
+    vertical-align: middle;
+
+    &:first-child {
+      width: 170px;
+
+      @include mq(tab) {
+        width: 100px;
+      }
+
+      @include mq() {
+        width: 100px;
+      }
+    }
+  }
+
+  td {
+    border: $table-common;
+    background-color: $base-white;
+    text-align: right;
+    font-weight: bold;
+    padding-right: 25px;
+    vertical-align: middle;
+
+    p {
+      font-size: 13px;
+      margin-top: 5px;
+      font-weight: bold;
+    }
+
+    span {
+      color: $main-red;
+      font-weight: bold;
+    }
+  }
+}
+
+.table-footnote {
+  margin-top: 12px;
+  font-size: 14px;
+
+  a {
+    font-weight: bold;
+    color: $main-font-color;
+    text-decoration: underline;
+  }
+}

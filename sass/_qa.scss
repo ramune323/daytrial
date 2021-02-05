@@ -1,0 +1,105 @@
+@import "config";
+
+/* qa
+--------------------- */
+.qa {
+  background-color: $base-gray;
+  padding-bottom: 120px;
+}
+
+.qa-inner {
+  @include mq(tab) {
+    @include inner(80%);
+  }
+
+  @include mq(sp) {
+    @include inner(90%);
+  }
+}
+
+.qa-title {
+  @include title;
+  margin-bottom: 111px;
+}
+
+.qa-items {
+  text-align: center;
+}
+
+.qa-item {
+  display: inline-block;
+
+  @include mq(tab) {
+    display: block;
+  }
+
+  @include mq(sp) {
+    display: block;
+  }
+}
+
+.qa-q {
+  text-align: left;
+  color: $base-white;
+  background-color: $main-blue;
+  width: 900px;
+  padding: 12px 0;
+  margin-top: 24px;
+  position: relative;
+
+  @include mq(tab) {
+    width: 100%;
+  }
+
+  @include mq(sp) {
+    width: 100%;
+  }
+
+  &::before {
+    content: "Q";
+    margin-left: 20px;
+    margin-right: 25px;
+  }
+}
+
+.qa-a {
+  display: none;
+}
+
+.qa-a-wrap {
+  display: flex;
+  width: 900px;
+  background-color: $base-white;
+  border: solid $main-blue 1px;
+  padding: 16px 30px 16px 20px;
+  color: $main-blue;
+
+  @include mq(tab) {
+    width: 100%;
+  }
+
+  @include mq(sp) {
+    width: 100%;
+  }
+}
+
+.qa-a-in {
+  line-height: 1.5;
+  @include lhCrop(1.5, 1);
+  text-align: left;
+  padding-left: 25px;
+}
+
+.qa-icon {
+  width: 12px;
+  height: 12px;
+  background: transparent url(../../img/plus.png) no-repeat center center / contain;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &.is-open {
+    background-image: url(../../img/minus.png);
+  }
+}
